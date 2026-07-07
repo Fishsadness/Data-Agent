@@ -32,5 +32,13 @@ def create_llm(temperature: Optional[float] = None) -> ChatOpenAI:
     return ChatOpenAI(**kwargs)
 
 
-# 全局 LLM 实例
-llm = create_llm()
+# 全局 LLM 实例 - 延迟初始化
+_llm_instance = None
+
+
+def get_llm() -> ChatOpenAI:
+    """获取全局 LLM 实例（延迟初始化）"""
+    global _llm_instance
+    if _llm_instance is None:
+        _llm_instance = create_llm()
+    return _llm_instance

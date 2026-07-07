@@ -28,7 +28,7 @@ export function ChatHeader({ title = 'DATA AGENT' }: ChatHeaderProps) {
 
         <div className="flex items-center gap-2">
           <nav className="flex items-center border-2 border-vintage-brown/30 dark:border-vintage-amber/30 p-0.5 mr-2">
-            {(['chat', 'schema', 'history'] as const).map((panel) => (
+            {(['chat', 'schema', 'dashboard', 'history'] as const).map((panel) => (
               <button
                 key={panel}
                 onClick={() => setActivePanel(panel)}
@@ -38,7 +38,7 @@ export function ChatHeader({ title = 'DATA AGENT' }: ChatHeaderProps) {
                     : 'text-vintage-brown/50 dark:text-vintage-amber/50 hover:text-vintage-brown dark:hover:text-vintage-amber'
                 }`}
               >
-                {panel === 'chat' ? 'Chat' : panel === 'schema' ? 'Schema' : 'History'}
+                {panel === 'chat' ? 'Chat' : panel === 'schema' ? 'Schema' : panel === 'dashboard' ? 'Dashboard' : 'History'}
               </button>
             ))}
           </nav>

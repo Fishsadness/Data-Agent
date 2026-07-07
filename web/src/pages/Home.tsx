@@ -4,6 +4,7 @@ import { MessageList } from '../components/chat/MessageList';
 import { ChatInput } from '../components/chat/ChatInput';
 import { ChatHeader } from '../components/chat/ChatHeader';
 import { SchemaPanel } from '../components/panels/SchemaPanel';
+import { DashboardPanel } from '../components/panels/DashboardPanel';
 import { queryData } from '../api';
 import { generateId } from '../lib/utils';
 import type { Message } from '../types';
@@ -66,6 +67,7 @@ export function Home() {
         </>
       )}
       {activePanel === 'schema' && <SchemaPanel />}
+      {activePanel === 'dashboard' && <DashboardPanel activePanel={activePanel} />}
       {activePanel === 'history' && (
         <div className="flex-1 flex items-center justify-center paper-texture dark:paper-texture-dark">
           <div className="text-center">

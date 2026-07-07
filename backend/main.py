@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from config import SERVER_CONFIG, LOG_CONFIG
 from db.init_demo import init_demo_db
 from db.connection import test_connection
+from knowledge.retriever import init_knowledge_base
 from api.routes import router
 
 # 配置日志
@@ -62,6 +63,12 @@ async def startup():
         init_demo_db()
     except Exception as e:
         logger.error(f"数据库初始化失败: {e}")
+
+    # 初始化知识库
+    try:
+        init_knowledge_base()
+    except Exception as e:
+        logger.error(f"知识库初始化失败: {e}")
 
     # 测试连接
     if test_connection():

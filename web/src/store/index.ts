@@ -25,8 +25,8 @@ interface AppState {
   setCurrentResult: (r: QueryResult | null) => void;
 
   // 面板
-  activePanel: 'chat' | 'schema' | 'history';
-  setActivePanel: (p: 'chat' | 'schema' | 'history') => void;
+  activePanel: 'chat' | 'schema' | 'dashboard' | 'history';
+  setActivePanel: (p: 'chat' | 'schema' | 'dashboard' | 'history') => void;
 }
 
 export const useStore = create<AppState>((set) => ({
