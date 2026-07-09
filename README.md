@@ -156,49 +156,10 @@ Agent 编排层   Planner + Coordinator 多Agent协作
 - Node.js 18+
 - OpenAI API Key（或兼容的 API 代理）
 
-### 1. 克隆项目
 
-```bash
-cd data-agent
 ```
 
-### 2. 启动后端
-
-```bash
-cd backend
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 设置 API Key（Windows）
-set OPENAI_API_KEY=sk-your-key-here
-
-# 设置 API Key（macOS / Linux）
-export OPENAI_API_KEY=sk-your-key-here
-
-# 启动服务（端口 8002）
-python main.py
-```
-
-启动后访问：
-- **API 文档**：http://localhost:8002/docs
-- **健康检查**：http://localhost:8002/api/health
-
-### 3. 启动前端
-
-```bash
-cd web
-
-# 安装依赖
-npm install
-
-# 启动开发服务器（端口 5173）
-npm run dev
-```
-
-访问 http://localhost:5173 即可使用。
-
-### 4. 环境变量
+### 1. 环境变量
 
 | 变量 | 说明 | 默认值 |
 |------|------|--------|
@@ -392,23 +353,6 @@ curl -X POST http://localhost:8002/api/query \
 
 返回：SQL + 数据 + 分析 + 图表配置 + 耗时
 
-### 多 Agent 协作
-
-```bash
-curl -X POST http://localhost:8002/api/agent/plan \
-  -H "Content-Type: application/json" \
-  -d '{"question": "分析今年销量下降的原因并给出建议"}'
-```
-
-返回：Planner 分解的任务步骤列表
-
-### SQL 优化
-
-```bash
-curl -X POST http://localhost:8002/api/sql/optimize \
-  -H "Content-Type: application/json" \
-  -d '{"sql": "SELECT * FROM orders WHERE YEAR(create_time)=2025", "auto_fix": true}'
-```
 
 返回：优化后的 SQL + 建议 + 索引推荐
 
