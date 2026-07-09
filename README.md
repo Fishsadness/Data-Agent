@@ -148,55 +148,6 @@ Agent 编排层   Planner + Coordinator 多Agent协作
 
 ---
 
-## 快速开始
-
-### 环境要求
-
-- Python 3.10+
-- Node.js 18+
-- OpenAI API Key（或兼容的 API 代理）
-
-### 1. 克隆项目
-
-```bash
-cd data-agent
-```
-
-### 2. 启动后端
-
-```bash
-cd backend
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 设置 API Key（Windows）
-set OPENAI_API_KEY=sk-your-key-here
-
-# 设置 API Key（macOS / Linux）
-export OPENAI_API_KEY=sk-your-key-here
-
-# 启动服务（端口 8002）
-python main.py
-```
-
-启动后访问：
-- **API 文档**：http://localhost:8002/docs
-- **健康检查**：http://localhost:8002/api/health
-
-### 3. 启动前端
-
-```bash
-cd web
-
-# 安装依赖
-npm install
-
-# 启动开发服务器（端口 5173）
-npm run dev
-```
-
-访问 http://localhost:5173 即可使用。
 
 ### 4. 环境变量
 
