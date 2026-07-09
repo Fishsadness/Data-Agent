@@ -331,39 +331,6 @@ users ──< orders >── products
 
 ---
 
-## 使用示例
-
-### 基本查询
-
-```bash
-curl -X POST http://localhost:8002/api/query \
-  -H "Content-Type: application/json" \
-  -d '{"question": "查询销量最高的10个商品"}'
-```
-
-返回：SQL + 数据 + 分析 + 图表配置 + 耗时
-
-### 多 Agent 协作
-
-```bash
-curl -X POST http://localhost:8002/api/agent/plan \
-  -H "Content-Type: application/json" \
-  -d '{"question": "分析今年销量下降的原因并给出建议"}'
-```
-
-返回：Planner 分解的任务步骤列表
-
-### SQL 优化
-
-```bash
-curl -X POST http://localhost:8002/api/sql/optimize \
-  -H "Content-Type: application/json" \
-  -d '{"sql": "SELECT * FROM orders WHERE YEAR(create_time)=2025", "auto_fix": true}'
-```
-
-返回：优化后的 SQL + 建议 + 索引推荐
-
----
 
 ## 设计理念
 
